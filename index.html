@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <button id="getOK">发送请求OK(客户端解决跨域问题)</button>
+    <button id="getNO">发送请求NO(客户端解决跨域问题)</button>
+    <script>
+        $(document).ready(function () {
+            $('#getOK').click(function () {
+                $.ajax({
+                    url:'http://localhost:3003/ok',
+                    success:function(res) {
+                        console.log("success",res)
+                    },
+                    error:function(err) {
+                        console.log('fail',err)
+                    }
+                })
+            })
+            $('#getNO').click(function () {
+                $.ajax({
+                    url:'http://localhost:3003/no',
+                    success:function(res) {
+                        console.log("success",res)
+                    },
+                    error:function(err) {
+                        console.log('fail',err)
+                    }
+                })
+            })
+        })
+        
+
+    </script>
+</body>
+</html>
